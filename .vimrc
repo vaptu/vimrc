@@ -1,9 +1,5 @@
 set nocompatible               " be iMproved, required
-"filetype off                  " required
-
-"colors
-set t_Co=256
-colorscheme Tomorrow-Night-Eighties
+filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -29,6 +25,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'posva/vim-vue'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vaptu/vim-copyright'
+Plugin 'spf13/vim-autoclose'
 
 
 
@@ -49,6 +46,10 @@ filetype plugin indent on    " required
 
 "leader
 let mapleader = ','
+
+"colors
+set t_Co=256
+colorscheme Tomorrow-Night-Eighties
 
 "User
 syntax on
