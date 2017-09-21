@@ -26,6 +26,7 @@ Plugin 'posva/vim-vue'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vaptu/vim-copyright'
 Plugin 'spf13/vim-autoclose'
+Plugin 'kshenoy/vim-signature'
 
 
 
@@ -94,5 +95,5 @@ autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 autocmd BufRead,BufNewFile *.js  set tabstop=2
 autocmd BufRead,BufNewFile *.js  set shiftwidth=2
 
-
-
+"copyright
+let g:author = "vaptu"
