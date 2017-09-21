@@ -1,5 +1,9 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible               " be iMproved, required
+"filetype off                  " required
+
+"colors
+set t_Co=256
+colorscheme Tomorrow-Night-Eighties
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -23,6 +27,9 @@ Plugin 'fatih/vim-go'
 Plugin 'mbbill/undotree'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'posva/vim-vue'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vaptu/vim-copyright'
+
 
 
 " All of your Plugins must be added before the following line
@@ -82,5 +89,9 @@ map <leader>ff :Autoformat<CR>
 
 
 "vue
-autocmd FileType vue set tabstop=2
-autocmd FileType vue set shiftwidth=2
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+autocmd BufRead,BufNewFile *.js  set tabstop=2
+autocmd BufRead,BufNewFile *.js  set shiftwidth=2
+
+
+
