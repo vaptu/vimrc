@@ -1,6 +1,7 @@
 set nocompatible               " be iMproved, required
 filetype off                  " required
 
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -19,15 +20,19 @@ Plugin 'yssource/python.vim'
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 Plugin 'mbbill/undotree'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'posva/vim-vue'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'vaptu/vim-copyright'
+"Plugin 'vaptu/vim-copyright'
 Plugin 'spf13/vim-autoclose'
 Plugin 'kshenoy/vim-signature'
 
+
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_enable_on_vim_startup = 1
 
 
 " All of your Plugins must be added before the following line
@@ -51,6 +56,14 @@ let mapleader = ','
 "colors
 set t_Co=256
 colorscheme Tomorrow-Night-Eighties
+
+" tab to space
+set tabstop=4 
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+%retab!
+
 
 "User
 syntax on
@@ -92,8 +105,14 @@ map <leader>ff :Autoformat<CR>
 
 "vue
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+autocmd BufRead,BufNewFile *.vue set tabstop=2
+autocmd BufRead,BufNewFile *.vue set shiftwidth=2
+autocmd BufRead,BufNewFile *.vue set softtabstop=2
+
+
 autocmd BufRead,BufNewFile *.js  set tabstop=2
 autocmd BufRead,BufNewFile *.js  set shiftwidth=2
+autocmd BufRead,BufNewFile *.js set softtabstop=2
 
 "copyright
 let g:author = "vaptu"
