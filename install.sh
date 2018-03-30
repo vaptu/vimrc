@@ -8,6 +8,8 @@
 # *  
 # ----------------------------------------
 
+set -e 
+
 if [ -d "$HOME/.vim.back" ];then
     echo "Please delete or move the $HOME/.vim.back"
     exit
@@ -28,3 +30,7 @@ cp -f .vimrc ~/
 #vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+vim "+set nomore" "+PlugInstall" "+qall"
+
+cp -r ./conf.d ~/.vim/conf.d
