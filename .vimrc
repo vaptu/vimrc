@@ -1,118 +1,47 @@
-set nocompatible               " be iMproved, required
-filetype off                  " required
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'w0rp/ale'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'  "for gitv
+Plug 'gregsexton/gitv', {'on': ['Gitv']}
+Plug 'tpope/vim-surround'
+Plug 'mbbill/undotree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'spf13/vim-autoclose'
+Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
+Plug 'majutsushi/tagbar'
+Plug 'easymotion/vim-easymotion'
+Plug 'chr4/nginx.vim'
+Plug 'iago-lito/vim-visualMarks'
+Plug 'arnaud-lb/vim-php-namespace'
+Plug 'elzr/vim-json'
+Plug 'pangloss/vim-javascript'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'posva/vim-vue'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'airblade/vim-gitgutter'
+Plug 'kshenoy/vim-signature'
+Plug 'Chiel92/vim-autoformat'
+Plug 'reedes/vim-lexical'
+Plug 'vim-php/tagbar-phpctags.vim'
 
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic.git'
-Plugin 'Chiel92/vim-autoformat'
-"Plugin 'spf13/PIV'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'arnaud-lb/vim-php-namespace'
-Plugin 'yssource/python.vim'
-Plugin 'elzr/vim-json'
-Plugin 'pangloss/vim-javascript'
-Plugin 'hail2u/vim-css3-syntax'
-"Plugin 'fatih/vim-go'
-Plugin 'mbbill/undotree'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'posva/vim-vue'
-Plugin 'airblade/vim-gitgutter'
-"Plugin 'vaptu/vim-copyright'
-Plugin 'spf13/vim-autoclose'
-Plugin 'kshenoy/vim-signature'
+call plug#end()
 
 
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-let g:indent_guides_enable_on_vim_startup = 1
+source ~/.vim/conf.d/util.vim
+source ~/.vim/conf.d/nerdtree.vim
+source ~/.vim/conf.d/ale.vim
+source ~/.vim/conf.d/undotree.vim
+source ~/.vim/conf.d/nerdcommenter.vim
+source ~/.vim/conf.d/tabular.vim
+source ~/.vim/conf.d/tagbar.vim
+source ~/.vim/conf.d/fugitive.vim
+source ~/.vim/conf.d/vim-easymotion.vim
+source ~/.vim/conf.d/vim-php-namespace.vim
+source ~/.vim/conf.d/vim-indent-guides.vim
+source ~/.vim/conf.d/tagbar-phpctags.vim
 
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-"leader
-let mapleader = ','
-
-"colors
-set t_Co=256
-colorscheme Tomorrow-Night-Eighties
-
-" tab to space
-set tabstop=4 
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-%retab!
-
-
-"User
-syntax on
-set nu
-set autoindent
-set tabstop=4
-set cursorline
-set background=dark
-set shiftwidth=4
-
-map <leader>h :noh<CR>
-
-cmap w!! w !sudo tee % >/dev/null
-
-"paste
-set pastetoggle=<F12>
-
-"NERDTree
-map <F10> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-
-
-"syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"vim-autoformat
-map <leader>ff :Autoformat<CR>
-
-"nerdcommenter
-"doc: <leader>cc comment
-
-
-"vue
-autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
-autocmd BufRead,BufNewFile *.vue set tabstop=2
-autocmd BufRead,BufNewFile *.vue set shiftwidth=2
-autocmd BufRead,BufNewFile *.vue set softtabstop=2
-
-
-autocmd BufRead,BufNewFile *.js  set tabstop=2
-autocmd BufRead,BufNewFile *.js  set shiftwidth=2
-autocmd BufRead,BufNewFile *.js set softtabstop=2
-
-"copyright
-let g:author = "vaptu"
