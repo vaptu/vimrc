@@ -17,5 +17,9 @@ set expandtab
 autocmd BufRead,BufNewFile *  :%retab!
 
 "keybind
-map <leader>h :noh<CR>
+nmap <leader>h :noh<CR>
 cmap w!! w !sudo tee % >/dev/null
+nmap <leader>w :w<CR>
+nmap <leader>wq :wq<CR>
+nmap <leader>wa :wa<CR>
+nmap <leader>waq :waa<CR>
