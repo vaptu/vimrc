@@ -15,7 +15,6 @@ Plug 'majutsushi/tagbar'
 Plug 'easymotion/vim-easymotion'
 Plug 'chr4/nginx.vim'
 Plug 'iago-lito/vim-visualMarks'
-Plug 'arnaud-lb/vim-php-namespace'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'hail2u/vim-css3-syntax'
@@ -40,7 +39,6 @@ source ~/.vim/conf.d/tabular.vim
 source ~/.vim/conf.d/tagbar.vim
 source ~/.vim/conf.d/fugitive.vim
 source ~/.vim/conf.d/vim-easymotion.vim
-source ~/.vim/conf.d/vim-php-namespace.vim
 source ~/.vim/conf.d/vim-indent-guides.vim
 source ~/.vim/conf.d/tagbar-phpctags.vim
 
